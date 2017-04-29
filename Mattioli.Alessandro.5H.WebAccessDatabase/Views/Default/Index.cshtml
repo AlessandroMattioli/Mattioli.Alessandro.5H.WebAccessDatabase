@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Inserimento Query</h2>
+@using (Html.BeginForm("Query", "Default", FormMethod.Post, htmlAttributes: new { @name = "QueryForm" }))
+{
+    <div class="form-group">
+        <p>Seleziona una delle query presenti qui di seguito.</p>
+        <select class="form-control" name="Query">
+            <option value="select * from Prenotazioni">Guarda Tutte le prenotazioni</option>
+            <option value="select pe.*, pr.* from Persone as pe inner join Prenotazioni as pr on pe.CodPersona = pr.CodPersona">Guarda le prenotazioni per ogni persona</option>
+        </select><br />
+        <input type="submit" class="form-control"/>
+    </div>
+}
